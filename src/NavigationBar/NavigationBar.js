@@ -12,7 +12,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 export default function NavigationBar() {
   return (
-    <AppBar position="static" style={{ backgroundColor: '#405D72' }}>
+    <AppBar position="static" style={{ backgroundColor: '#405D72', margin:'0' }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Priyanka Gautam

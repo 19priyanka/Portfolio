@@ -20,8 +20,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Homepage() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
+    <Box sx={{ flexGrow: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Grid container spacing={2} style={{ flexGrow: 1 }}>
         <Grid item xs={12}>
           <NavigationBar />
         </Grid>
@@ -32,7 +32,8 @@ export default function Homepage() {
             textAlign: "center",
             backgroundColor: "#758694",
             color: "#fff",
-            padding: "40px 0",
+            padding: "52px 0",
+            flexGrow: 1,
           }}
         >
           <Grid container spacing={4} justifyContent="center" alignItems="center">
