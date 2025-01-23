@@ -40,9 +40,9 @@ export default function NavigationBar() {
             >
               Projects
             </Button>
-            <Button color="inherit">Extracurricular</Button>
-            <Button color="inherit">Capstone</Button>
-            <Button color="inherit">Resume</Button>
+            <Button color="inherit"  onClick={() => navigate("/ExtracurricularHomepage")}>Extracurricular</Button>
+            <Button color="inherit" onClick={() => navigate("/CapstoneHomepage")}>Capstone</Button>
+            <Button color="inherit" onClick={() => navigate("/ResumeHomepage")}>Resume</Button>
            
           
           </Box>

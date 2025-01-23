@@ -97,14 +97,14 @@ export default function Homepage() {
             <img
               src={NewRelicLogo}
               alt="New Relic"
-              style={{ height: "60px" }}
+              style={{ height: "90px", paddingTop:'5px' }}
             />
           </div>
           <div>
-            <img src={CNRLLogo} alt="Cnrl" style={{ height: "80px" }} />
+            <img src={CNRLLogo} alt="Cnrl" style={{ height: "110px", paddingBottom:'8px' }} />
           </div>
           <div>
-            <img src={SchulichLogo} alt="Schulich" style={{ height: "90px" }} />
+            <img src={SchulichLogo} alt="Schulich" style={{ height: "130px", paddingBottom:'9px'}} />
           </div>
         </div>
       </Grid>
