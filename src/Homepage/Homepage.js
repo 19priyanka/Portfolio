@@ -1,10 +1,10 @@
 import * as React from "react";
-import AboutMe from "../AboutMe/AboutMe";
+
 import NavigationBar from "../NavigationBar/NavigationBar";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 import ProfilePicture from "../IMG_5017.jpeg";
 import NewRelicLogo from "../new_relic_logo.png";
@@ -33,7 +33,7 @@ export default function Homepage() {
           justifyContent="center"
           alignItems="center"
         >
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={4} md={4}>
             <img
               src={ProfilePicture}
               alt="Your Name"
@@ -77,15 +77,7 @@ export default function Homepage() {
                 participating in hackathons, and engaging with the tech
                 community. Let's connect or collaborate on exciting projects!
               </Typography>
-               <div>
-              <Button
-                variant="contained"
-                color="primary"
-                style={{ marginTop: "20px" }}
-              >
-                Let's get started
-              </Button>
-            </div>
+             
             </div>
            
           </Grid>
@@ -105,14 +97,14 @@ export default function Homepage() {
             <img
               src={NewRelicLogo}
               alt="New Relic"
-              style={{ height: "60px" }}
+              style={{ height: "90px", paddingTop:'5px' }}
             />
           </div>
           <div>
-            <img src={CNRLLogo} alt="Cnrl" style={{ height: "80px" }} />
+            <img src={CNRLLogo} alt="Cnrl" style={{ height: "110px", paddingBottom:'8px' }} />
           </div>
           <div>
-            <img src={SchulichLogo} alt="Schulich" style={{ height: "90px" }} />
+            <img src={SchulichLogo} alt="Schulich" style={{ height: "130px", paddingBottom:'9px'}} />
           </div>
         </div>
       </Grid>
