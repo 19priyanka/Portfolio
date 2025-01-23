@@ -77,15 +77,7 @@ export default function Homepage() {
                 participating in hackathons, and engaging with the tech
                 community. Let's connect or collaborate on exciting projects!
               </Typography>
-               <div>
-              <Button
-                variant="contained"
-                color="primary"
-                style={{ marginTop: "20px" }}
-              >
-                Let's get started
-              </Button>
-            </div>
+             
             </div>
            
           </Grid>

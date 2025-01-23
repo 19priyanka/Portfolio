@@ -8,9 +8,14 @@ import Box from '@mui/material/Box';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import { useNavigate } from "react-router-dom";
+//import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 export default function NavigationBar() {
+  let navigate = useNavigate(); 
+  
+
+
   return (
     <div>
     <AppBar position="static" style={{ backgroundColor: '#405D72' ,  paddingBottom:'15px' }}>
@@ -20,8 +25,8 @@ export default function NavigationBar() {
         </Typography>
         <Box style={{marginLeft:'500px'}}>
         <Button color="inherit">Home</Button>
-        <Button color="inherit">Case Studies</Button>
-        <Button color="inherit">Testimonials</Button>
+            <Button color="inherit" onClick={()=> navigate('/ProjectsHomepage')} >Projects</Button>
+        <Button color="inherit" >Extracurricular</Button>
         <Button color="inherit">Recent Work</Button>
         <Button color="inherit">Get In Touch</Button>
         </Box>
@@ -30,15 +35,15 @@ export default function NavigationBar() {
         <IconButton color="inherit" href="https://www.linkedin.com" target="_blank">
           <LinkedInIcon />
         </IconButton>
-        <IconButton color="inherit" href="https://www.behance.net" target="_blank">
+        <IconButton color="inherit" href="https://github.com/19priyanka" target="_blank">
           <GitHubIcon />
         </IconButton>
-        <IconButton color="inherit" href="https://www.twitter.com" target="_blank">
+        <IconButton color="inherit" href="mailto:pgautam.dev19@gmail.com" target="_blank">
           <EmailIcon />
         </IconButton>
-        <IconButton color="inherit" href="https://www.twitter.com" target="_blank">
+        {/* <IconButton color="inherit" href="https://www.twitter.com" target="_blank">
           <LocalPhoneIcon />
-        </IconButton>
+        </IconButton> */}
       </Toolbar>
       </AppBar>
           </div>
