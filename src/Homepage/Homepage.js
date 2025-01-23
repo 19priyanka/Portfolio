@@ -1,10 +1,10 @@
 import * as React from "react";
-import AboutMe from "../AboutMe/AboutMe";
+
 import NavigationBar from "../NavigationBar/NavigationBar";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 import ProfilePicture from "../IMG_5017.jpeg";
 import NewRelicLogo from "../new_relic_logo.png";
@@ -33,7 +33,7 @@ export default function Homepage() {
           justifyContent="center"
           alignItems="center"
         >
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={4} md={4}>
             <img
               src={ProfilePicture}
               alt="Your Name"
