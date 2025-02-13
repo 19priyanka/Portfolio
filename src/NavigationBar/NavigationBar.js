@@ -10,6 +10,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import { useNavigate } from "react-router-dom";
 //import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import Resume from "../PriyankaGautam_SoftwareResume.pdf";
 
 export default function NavigationBar() {
   let navigate = useNavigate();
