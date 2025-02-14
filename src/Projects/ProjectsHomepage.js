@@ -20,6 +20,7 @@ export default function ProjectsHomepage() {
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
+        
       }}
     >
       <NavigationBar />
