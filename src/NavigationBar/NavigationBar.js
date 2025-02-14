@@ -34,7 +34,7 @@ export default function NavigationBar() {
           </Typography>
           <Box sx={{ paddingLeft: { sm: '0px', md: '450px' } }}>
             
-                <Button color="inherit">Home</Button>
+                <Button color="inherit" onClick={() => navigate("/")}>Home</Button>
             <Button
               color="inherit"
               onClick={() => navigate("/ProjectsHomepage")}
@@ -44,6 +44,7 @@ export default function NavigationBar() {
             <Button color="inherit"  onClick={() => navigate("/ExtracurricularHomepage")}>Extracurricular</Button>
             <Button color="inherit" onClick={() => navigate("/CapstoneHomepage")}>Capstone</Button>
             <Button color="inherit" onClick={() => navigate("/ResumeHomepage")}>Resume</Button>
+          
            
           
           </Box>
