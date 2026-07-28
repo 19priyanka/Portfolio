@@ -115,6 +115,10 @@ function GeneratedCover({
   return (
     <div
       className={`${className} bg-linear-to-br ${gradient}`}
+      // Container query units so the initial scales with the tile. A percentage
+      // font-size would resolve against the parent's font size, not the tile,
+      // and render a few pixels tall at any size.
+      style={{ containerType: 'inline-size' }}
       role={decorative ? undefined : 'img'}
       aria-label={decorative ? undefined : alt}
       aria-hidden={decorative || undefined}
@@ -133,7 +137,8 @@ function GeneratedCover({
       />
       <span
         aria-hidden="true"
-        className="absolute inset-0 grid place-items-center text-[45%] leading-none font-black text-white/90 drop-shadow-lg"
+        className="absolute inset-0 grid place-items-center leading-none font-black text-white/90 drop-shadow-lg"
+        style={{ fontSize: '48cqw' }}
       >
         {initial}
       </span>
