@@ -1,2 +1,0 @@
-- mobile layout fix 
-- downloadable resume pdf file

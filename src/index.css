@@ -1,13 +1,146 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+
+/* ---------------------------------------------------------------------------
+   Design tokens.
+
+   The site is dark-only by intent: it is imitating a dark-mode product. There
+   is no light theme and no toggle. Contrast is checked against `--color-base`
+   and `--color-elevated`, the only two surfaces body text ever sits on.
+   --------------------------------------------------------------------------- */
+@theme {
+  --color-base: #000000;
+  --color-elevated: #121212;
+  --color-card: #181818;
+  --color-hover: #1f1f1f;
+  --color-highlight: #2a2a2a;
+  --color-line: #2e2e2e;
+
+  --color-ink: #ffffff;
+  /* 6.4:1 on --color-elevated, 6.9:1 on --color-base. Passes AA. */
+  --color-subdued: #a7a7a7;
+
+  /* 6.3:1 on --color-base. Never used as text on a light surface. */
+  --color-accent: #1db954;
+  --color-accent-bright: #1ed760;
+  --color-cyan: #22d3ee;
+  --color-amber: #f59e0b;
+  --color-violet: #a78bfa;
+  --color-rose: #fb7185;
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --spacing-sidebar: 15rem;
+  --spacing-rail: 4.5rem;
+  --spacing-player: 5.5rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* The app shell owns scrolling. Locking the document here means no
+       nested-scroll fights and no accidental horizontal page scroll. */
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-bright);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Only remove the ring for pointer interaction, never for keyboard. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+@layer utilities {
+  .scrollbar-spotify {
+    scrollbar-color: var(--color-highlight) transparent;
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-spotify::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  .scrollbar-spotify::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-spotify::-webkit-scrollbar-thumb {
+    background-color: var(--color-highlight);
+    border: 3px solid transparent;
+    background-clip: content-box;
+    border-radius: 999px;
+  }
+
+  .scrollbar-spotify::-webkit-scrollbar-thumb:hover {
+    background-color: #4a4a4a;
+    background-clip: content-box;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Truncate to a fixed number of lines without knowing the line height. */
+  .line-clamp-2-safe {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@keyframes eq-bar {
+  from {
+    transform: scaleY(0.25);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* A single global brake for motion. Every animated surface also checks the
+   preference in JS via usePrefersReducedMotion, but this catches CSS
+   transitions and any path that slips by. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,0 +1,61 @@
+import { Link } from 'react-router-dom';
+import type { Playlist } from '../../types';
+import { Artwork } from '../ui/Artwork';
+import { PlayButton } from '../ui/PlayButton';
+import { usePlayer } from '../../context/PlayerContext';
+
+const KIND_LABEL: Record<Playlist['kind'], string> = {
+  playlist: 'Playlist',
+  album: 'Album',
+  podcast: 'Podcast',
+};
+
+/**
+ * The play affordance is revealed with CSS rather than Framer variants: an
+ * animated inline `opacity` would outrank `group-focus-within:opacity-100`,
+ * which would leave keyboard users unable to ever see the button.
+ */
+export function PlaylistCard({ playlist }: { playlist: Playlist }) {
+  const { playPlaylist, isPlaying, isCurrent } = usePlayer();
+  const active = isCurrent(playlist.slug);
+
+  return (
+    <div className="group relative">
+      <Link
+        to={`/playlist/${playlist.slug}`}
+        className="block rounded-lg bg-card p-4 transition-colors duration-200 hover:bg-hover focus-visible:bg-hover"
+      >
+        <Artwork
+          src={playlist.cover}
+          alt=""
+          decorative
+          gradient={playlist.gradient}
+          className="aspect-square w-full"
+        />
+
+        <h3 className="mt-4 truncate font-bold text-ink" title={playlist.title}>
+          {playlist.title}
+        </h3>
+        <p className="line-clamp-2-safe mt-1 min-h-[2.5rem] text-sm text-subdued">
+          {playlist.description}
+        </p>
+        <p className="mt-2 text-[11px] tracking-wide text-subdued/80 uppercase">
+          {KIND_LABEL[playlist.kind]} · {playlist.tracks.length}{' '}
+          {playlist.tracks.length === 1 ? 'track' : 'tracks'}
+        </p>
+      </Link>
+
+      <div
+        className={`absolute right-6 bottom-[6.5rem] transition-all duration-200 ease-out-soft group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 ${
+          active ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
+        }`}
+      >
+        <PlayButton
+          playing={active && isPlaying}
+          onClick={() => playPlaylist(playlist)}
+          label={playlist.title}
+        />
+      </div>
+    </div>
+  );
+}
