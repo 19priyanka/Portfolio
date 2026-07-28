@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { BadgeCheck, Download, MapPin } from 'lucide-react';
 import { profile } from '../data/profile';
-import { allTracks, featuredPlaylist, playlists, totalRuntime } from '../data/playlists';
+import { allTracks, featuredPlaylist, playlists } from '../data/playlists';
 import { usePlayer } from '../context/PlayerContext';
 import { usePageChrome } from '../components/layout/AppShell';
 import { PageTransition } from '../components/ui/PageTransition';
@@ -110,7 +110,9 @@ export function Home() {
               src={featuredTrack.artwork}
               alt=""
               decorative
+              isLogo={featuredTrack.artworkIsLogo}
               gradient={featuredPlaylist.gradient}
+              title={featuredTrack.title}
               className="h-40 w-40 shrink-0 sm:h-44 sm:w-44"
             />
             <div className="min-w-0">
@@ -144,11 +146,14 @@ export function Home() {
           <h2 className="mb-5 text-xl font-bold sm:text-2xl">Appears on</h2>
           <ul className="flex flex-wrap items-center gap-x-10 gap-y-6 rounded-xl bg-card px-6 py-7">
             {profile.employers.map((employer) => (
-              <li key={employer.name}>
+              <li
+                key={employer.name}
+                className="grid h-20 place-items-center rounded-lg bg-white/95 px-6 transition-transform duration-200 hover:scale-105"
+              >
                 <img
                   src={employer.logo}
                   alt={employer.name}
-                  className={`${employer.height} w-auto opacity-70 transition-opacity duration-200 hover:opacity-100`}
+                  className={`${employer.height} w-auto`}
                 />
               </li>
             ))}
@@ -164,7 +169,7 @@ export function Home() {
             ))}
           </div>
           <p className="mt-4 text-sm text-subdued">
-            {allTracks.length} tracks · {totalRuntime(allTracks)} of listening
+            {allTracks.length} tracks across {playlists.length} collections
           </p>
         </section>
       </div>

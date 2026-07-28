@@ -9,21 +9,24 @@ export interface TrackLink {
 /**
  * A single piece of work — a project, a role, or a community commitment.
  *
- * The player metaphor is mapped onto real career data rather than invented:
- *   duration  the timespan of the work (an eight-month capstone reads "8:04")
- *   plays     a reach metric (students mentored, users served, stores deployed)
- *   tags      the technology stack, rendered as genre pills
+ * Nothing here pretends to be audio. Where Spotify shows a track length, this
+ * shows `meta` — the honest number for that row, which is tenure for a role and
+ * a timespan or year for a project. A fake mm:ss clock was removed precisely
+ * because a running timer with no sound behind it reads as broken.
  */
 export interface Track {
   slug: string;
   title: string;
   /** The "artist" line beneath the title. */
   subtitle: string;
-  /** Falls back to a gradient tile when absent. */
+  /** Falls back to a generated cover when absent. */
   artwork?: string;
-  /** Display form, mm:ss. Kept alongside the numeric value so the two can't drift. */
-  duration: string;
-  durationSeconds: number;
+  /** Treat `artwork` as a logo: rendered on a light plate so it stays legible. */
+  artworkIsLogo?: boolean;
+  /** Right-hand column of the track row. Tenure for roles, timespan for projects. */
+  meta: string;
+  /** Longer form of `meta`, shown in the detail panel. */
+  metaLabel?: string;
   /** Pre-formatted reach metric, e.g. "80+ mentored". */
   plays: string;
   /** Omitted where the date isn't confirmed rather than guessed at. */
@@ -41,8 +44,12 @@ export interface Playlist {
   title: string;
   description: string;
   kind: PlaylistKind;
-  /** Falls back to a gradient tile when absent. */
+  /** Falls back to a generated cover when absent. */
   cover?: string;
+  /** Treat `cover` as a logo: rendered on a light plate so it stays legible. */
+  coverIsLogo?: boolean;
+  /** Short line under the playlist title in the library, e.g. "6 builds". */
+  blurb: string;
   /** Tailwind gradient classes for the header wash and card fallback. */
   gradient: string;
   /** Solid color used for the scroll-linked top bar tint. */

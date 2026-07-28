@@ -3,21 +3,26 @@ import type { Playlist, Track } from '../types';
 /* ---------------------------------------------------------------------------
    Content.
 
-   The player metaphor maps onto real data:
-     duration  months of active work, rendered mm:ss (8 months -> "8:00")
-     plays     a reach metric for the work
-     tags      the actual technology stack
+   Where Spotify shows a track length, this shows `meta` — the honest number for
+   that row. Tenure for a role, a timespan for a project. There is deliberately
+   no mm:ss anywhere: nothing plays, and a running clock with no audio behind it
+   reads as a bug rather than as a metaphor.
 
-   Values tagged VERIFY are estimates made from the résumé summary and should
-   be confirmed against the real dates and metrics before this goes live.
+     meta / metaLabel  the timespan, short form and long form
+     plays             a reach metric for the work
+     tags              the actual technology stack
+
+   TODO: `meta` for the three experience entries is still approximate — the
+   résumé PDF has the real dates. Replace 'Current' / 'Internship' / 'Degree'
+   with actual spans (e.g. '2024 — now', '16 months') once confirmed.
    --------------------------------------------------------------------------- */
 
 const capstone: Track = {
   slug: 'coop-handheld-scanner',
   title: 'Revamped Calgary Co-Op Handheld Scanner',
   subtitle: 'Capstone · React Native, Django · First place, Engineering Design Fair',
-  duration: '8:00', // VERIFY: assumed an 8-month capstone cycle
-  durationSeconds: 480,
+  meta: '8 months',
+  metaLabel: '8 months · 2024',
   plays: '1st place',
   year: '2024',
   tags: ['React Native', 'Django', 'Offline-First', 'SQLite', 'Python'],
@@ -37,8 +42,9 @@ const brainyBees: Track = {
   title: 'Brainy Bees',
   subtitle: 'Educational platform · Web, games and quizzes',
   artwork: '/assets/BrainyBeesLogo.png',
-  duration: '3:30', // VERIFY: assumed one academic term
-  durationSeconds: 210,
+  artworkIsLogo: true,
+  meta: '1 term',
+  metaLabel: 'One academic term',
   plays: 'Grades 5–9',
   tags: ['C++', 'Web', 'Education', 'Game Design', 'UX Research'],
   summary:
@@ -60,8 +66,9 @@ const vrLayerSense: Track = {
   title: 'VR-HaptoSkin-Pro / VR-LayerSense',
   subtitle: 'Medical training simulator · Unity, OpenGL, haptics',
   artwork: '/assets/VRLogo.png',
-  duration: '4:00', // VERIFY: assumed one academic term
-  durationSeconds: 240,
+  artworkIsLogo: true,
+  meta: '1 term',
+  metaLabel: 'One academic term',
   plays: 'Needle accuracy',
   tags: ['C++', 'OpenGL', 'Unity', 'VR', 'Haptics'],
   summary:
@@ -85,8 +92,9 @@ const getHomeSafe: Track = {
   title: 'GetHomeSafe',
   subtitle: 'Personal safety app · React Native, Node, MongoDB',
   artwork: '/assets/GetHomeSafeLogo.png',
-  duration: '4:00', // VERIFY: assumed one academic term
-  durationSeconds: 240,
+  artworkIsLogo: true,
+  meta: '1 term',
+  metaLabel: 'One academic term',
   plays: 'Low-signal safe',
   tags: ['React Native', 'TypeScript', 'Node.js', 'Express', 'MongoDB'],
   summary:
@@ -111,8 +119,9 @@ const matchAid: Track = {
   title: 'MatchAid',
   subtitle: 'Volunteer matching platform · Web',
   artwork: '/assets/MatchAidLogo.png',
-  duration: '3:45', // VERIFY: assumed one academic term
-  durationSeconds: 225,
+  artworkIsLogo: true,
+  meta: '1 term',
+  metaLabel: 'One academic term',
   plays: 'Volunteer gap',
   tags: ['Web', 'Full Stack', 'Product Design', 'Figma'],
   summary:
@@ -143,8 +152,9 @@ const mnist: Track = {
   title: 'Handwritten Digit Recognition',
   subtitle: 'Model comparison study · MNIST',
   artwork: '/assets/MachineLearningLogo.png',
-  duration: '2:30', // VERIFY: assumed a short term project
-  durationSeconds: 150,
+  artworkIsLogo: true,
+  meta: '1 term',
+  metaLabel: 'One academic term',
   plays: 'CNN won',
   tags: ['Python', 'Machine Learning', 'CNN', 'SVM', 'Random Forest'],
   summary:
@@ -174,8 +184,9 @@ const cnrl: Track = {
   title: 'Developer Analyst',
   subtitle: 'Canadian Natural Resources Limited · Calgary',
   artwork: '/assets/Canadian_Natural_Logo.svg',
-  duration: '24:00', // VERIFY: tenure length is an estimate
-  durationSeconds: 1440,
+  artworkIsLogo: true,
+  meta: 'Current',
+  metaLabel: 'Current role',
   plays: 'Now playing',
   year: 'Present',
   tags: ['Angular', 'Blazor', 'C#', 'VB.NET', 'SQL', 'PL/SQL'],
@@ -194,8 +205,9 @@ const newRelic: Track = {
   title: 'Full Stack Software Engineering Intern',
   subtitle: 'New Relic',
   artwork: '/assets/new_relic_logo.png',
-  duration: '12:00', // VERIFY: internship length is an estimate
-  durationSeconds: 720,
+  artworkIsLogo: true,
+  meta: 'Internship',
+  metaLabel: 'Full stack internship',
   plays: 'Shipped to prod',
   tags: ['Distributed Tracing', 'Full Stack', 'Algorithms', 'Observability'],
   summary:
@@ -213,8 +225,9 @@ const schulich: Track = {
   title: 'B.Sc. Software Engineering, with Distinction',
   subtitle: 'Schulich School of Engineering, University of Calgary',
   artwork: '/assets/schulich_logo.png',
-  duration: '60:00', // VERIFY: assumed a five-year program including internship
-  durationSeconds: 3600,
+  artworkIsLogo: true,
+  meta: 'Degree',
+  metaLabel: 'B.Sc. Software Engineering',
   plays: 'With distinction',
   tags: ['Software Engineering', 'Distinction', 'Design Fair Winner'],
   summary:
@@ -232,8 +245,9 @@ const mentorship: Track = {
   title: 'Schulich Student Mentorship Program',
   subtitle: 'Mentor · University of Calgary',
   artwork: '/assets/schulich_logo.png',
-  duration: '18:00', // VERIFY: ongoing, length is an estimate
-  durationSeconds: 1080,
+  artworkIsLogo: true,
+  meta: 'Ongoing',
+  metaLabel: 'Ongoing',
   plays: '80+ mentored',
   year: 'Ongoing',
   tags: ['Mentorship', 'Engineering', 'Community'],
@@ -251,8 +265,8 @@ const unitedWay: Track = {
   slug: 'cnqbay-united-way',
   title: 'CNQBay Charity Auction',
   subtitle: 'Head Chair · United Way campaign',
-  duration: '6:00', // VERIFY: annual campaign, length is an estimate
-  durationSeconds: 360,
+  meta: 'Annual',
+  metaLabel: 'Annual campaign',
   plays: 'Annual',
   tags: ['Leadership', 'Fundraising', 'Event Ops'],
   summary:
@@ -270,8 +284,9 @@ const cagis: Track = {
   title: 'CAGIS — STEM Expert Volunteer',
   subtitle: 'Canadian Association for Girls in Science',
   artwork: '/assets/CAGISLogo.png',
-  duration: '14:00', // VERIFY: ongoing, length is an estimate
-  durationSeconds: 840,
+  artworkIsLogo: true,
+  meta: 'Ongoing',
+  metaLabel: 'Ongoing',
   plays: 'Ages 7–17',
   year: 'Ongoing',
   tags: ['STEM Outreach', 'Youth', 'Workshop Design', 'Volunteering'],
@@ -292,6 +307,7 @@ export const playlists: Playlist[] = [
     description:
       'The capstone. An offline-first rebuild of Calgary Co-Op\'s handheld scanner application, and first place at the Engineering Design Fair.',
     kind: 'album',
+    blurb: 'Capstone · First place',
     gradient: 'from-emerald-600 via-emerald-800 to-elevated',
     accent: '#047857',
     tracks: [capstone],
@@ -302,6 +318,7 @@ export const playlists: Playlist[] = [
     description:
       'Everything that made it out of the editor — mobile, VR, machine learning and the web, in roughly the order I would replay them.',
     kind: 'playlist',
+    blurb: '6 builds · mobile, VR, ML, web',
     gradient: 'from-cyan-600 via-sky-900 to-elevated',
     accent: '#0e7490',
     tracks: [capstone, getHomeSafe, brainyBees, vrLayerSense, matchAid, mnist],
@@ -312,6 +329,7 @@ export const playlists: Playlist[] = [
     description:
       'Where the hours actually go. Enterprise re-architecture, observability tooling, and the degree that started it.',
     kind: 'album',
+    blurb: 'Roles and education',
     gradient: 'from-amber-500 via-orange-900 to-elevated',
     accent: '#b45309',
     tracks: [cnrl, newRelic, schulich],
@@ -322,6 +340,7 @@ export const playlists: Playlist[] = [
     description:
       'Leadership and mentorship — the long-running series. Eighty-plus engineering students and one annual charity auction.',
     kind: 'podcast',
+    blurb: 'Leadership · 80+ students',
     gradient: 'from-violet-600 via-purple-900 to-elevated',
     accent: '#6d28d9',
     tracks: [mentorship, unitedWay],
@@ -332,6 +351,7 @@ export const playlists: Playlist[] = [
     description:
       'Volunteering and STEM outreach. Making software legible to people who have not been told it is for them.',
     kind: 'playlist',
+    blurb: 'STEM outreach',
     gradient: 'from-rose-500 via-rose-900 to-elevated',
     accent: '#be123c',
     tracks: [cagis],
@@ -354,15 +374,6 @@ export function playlistForTrack(trackSlug: string): Playlist | undefined {
   return playlists.find((p) => p.tracks.some((t) => t.slug === trackSlug));
 }
 
-export function totalRuntime(tracks: Track[]): string {
-  const seconds = tracks.reduce((sum, t) => sum + t.durationSeconds, 0);
-  const hours = Math.floor(seconds / 3600);
-  const minutes = Math.round((seconds % 3600) / 60);
-  return hours > 0 ? `${hours} hr ${minutes} min` : `${minutes} min`;
-}
-
-export function formatSeconds(seconds: number): string {
-  const safe = Math.max(0, Math.floor(seconds));
-  const minutes = Math.floor(safe / 60);
-  return `${minutes}:${String(safe % 60).padStart(2, '0')}`;
+export function trackCount(tracks: Track[]): string {
+  return `${tracks.length} ${tracks.length === 1 ? 'track' : 'tracks'}`;
 }

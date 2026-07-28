@@ -89,7 +89,9 @@ function TimelineEntry({ track, playlist }: { track: Track; playlist: Playlist }
           src={track.artwork}
           alt=""
           decorative
+          isLogo={track.artworkIsLogo}
           gradient={playlist.gradient}
+          title={track.title}
           className="h-14 w-14 shrink-0"
           rounded="rounded"
         />

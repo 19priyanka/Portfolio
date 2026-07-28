@@ -31,7 +31,9 @@ export function PlaylistCard({ playlist }: { playlist: Playlist }) {
           src={playlist.cover}
           alt=""
           decorative
+          isLogo={playlist.coverIsLogo}
           gradient={playlist.gradient}
+          title={playlist.title}
           className="aspect-square w-full"
         />
         <div
@@ -60,8 +62,7 @@ export function PlaylistCard({ playlist }: { playlist: Playlist }) {
         {playlist.description}
       </p>
       <p className="mt-2 text-[11px] tracking-wide text-subdued/80 uppercase">
-        {KIND_LABEL[playlist.kind]} · {playlist.tracks.length}{' '}
-        {playlist.tracks.length === 1 ? 'track' : 'tracks'}
+        {KIND_LABEL[playlist.kind]} · {playlist.blurb}
       </p>
     </div>
   );

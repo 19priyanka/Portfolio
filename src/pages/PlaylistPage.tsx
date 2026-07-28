@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { Shuffle } from 'lucide-react';
-import { getPlaylist, totalRuntime } from '../data/playlists';
+import { getPlaylist, trackCount } from '../data/playlists';
 import { profile } from '../data/profile';
 import { usePlayer } from '../context/PlayerContext';
 import { usePageChrome } from '../components/layout/AppShell';
@@ -36,7 +36,9 @@ export function PlaylistPage() {
             src={playlist.cover}
             alt=""
             decorative
+            isLogo={playlist.coverIsLogo}
             gradient={playlist.gradient}
+            title={playlist.title}
             className="h-44 w-44 shrink-0 shadow-2xl sm:h-56 sm:w-56"
           />
           <div className="min-w-0">
@@ -54,8 +56,7 @@ export function PlaylistPage() {
                 ·
               </span>
               <span className="text-white/80">
-                {playlist.tracks.length} {playlist.tracks.length === 1 ? 'track' : 'tracks'},{' '}
-                {totalRuntime(playlist.tracks)}
+                {trackCount(playlist.tracks)}
               </span>
             </p>
           </div>

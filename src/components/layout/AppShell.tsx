@@ -11,6 +11,7 @@ import { Sidebar } from './Sidebar';
 import { TopBar } from './TopBar';
 import { NowPlayingBar } from './NowPlayingBar';
 import { MobileTabBar } from './MobileTabBar';
+import { DetailPanel } from '../playlist/DetailPanel';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 
 interface Chrome {
@@ -58,7 +59,9 @@ export function AppShell() {
         Skip to content
       </a>
       <div className="grid h-dvh grid-rows-[1fr_auto] overflow-x-clip bg-base">
-        <div className="grid min-h-0 grid-cols-1 md:grid-cols-[auto_1fr]">
+        {/* flex rather than grid columns: the detail panel animates its own
+            width open and closed, which a fixed grid template would fight. */}
+        <div className="flex min-h-0">
           <Sidebar />
 
           {/* The only scroll container in the application. Keeping scrolling in
@@ -73,6 +76,8 @@ export function AppShell() {
               <Outlet />
             </main>
           </div>
+
+          <DetailPanel />
         </div>
 
         <div className="flex flex-col">
