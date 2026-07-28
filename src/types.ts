@@ -96,6 +96,8 @@ export interface Profile {
   avatar: string;
   bio: string;
   tagline: string;
+  /** Explains the record-collection conceit to a first-time visitor. */
+  musicNote: string;
   stats: StatChipData[];
   socials: SocialLink[];
   resumePdf: string;

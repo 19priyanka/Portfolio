@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { BadgeCheck, Download, MapPin } from 'lucide-react';
+import { AudioLines, BadgeCheck, Download, MapPin } from 'lucide-react';
 import { profile } from '../data/profile';
 import { allTracks, featuredPlaylist, playlists } from '../data/playlists';
 import { usePlayer } from '../context/PlayerContext';
@@ -67,6 +67,13 @@ export function Home() {
         </div>
 
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-white">{profile.bio}</p>
+
+        {/* Tells a first-time visitor why this site is shaped like a music app
+            before they have to wonder about it. */}
+        <aside className="mt-6 flex max-w-3xl gap-4 border-l-2 border-accent-bright bg-black/25 py-4 pr-5 pl-5 backdrop-blur-sm">
+          <AudioLines className="mt-0.5 h-5 w-5 shrink-0 text-accent-bright" aria-hidden="true" />
+          <p className="text-sm leading-relaxed text-white/90">{profile.musicNote}</p>
+        </aside>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <PlayButton

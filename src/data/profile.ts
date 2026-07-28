@@ -17,6 +17,8 @@ export const profile: Profile = {
   avatar: '/assets/IMG_5017.jpeg',
   tagline: 'Engineer by trade. Problem-solver by habit.',
   bio: "I build software for places the network doesn't always reach — offline-first mobile apps, industrial hardware wired into enterprise stacks, and legacy systems dragged forward without taking the business down with them. I like the problems that don't have a library for them yet.",
+  musicNote:
+    "Also: I love music. Not casually — it is the thing running underneath everything else, the reason a commute is bearable and the reason I get anything finished. So when it came time to build this, a record collection was the only shape that felt honest. Everything here is laid out the way I actually think about it: things worth putting on repeat, things I am still working through, and a few tracks I am quietly proud of.",
   stats: [
     { label: 'Building since', value: '2020' },
     { label: 'Students mentored', value: '80+' },
