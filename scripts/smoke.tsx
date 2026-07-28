@@ -19,10 +19,17 @@ interface Case {
 }
 
 const CASES: Case[] = [
-  { path: '/', expect: ['Priyanka Gautam', 'Featured release', 'Top genres', 'Skip to content'] },
+  {
+    path: '/',
+    expect: ['Priyanka Gautam', 'Featured release', 'Top genres', 'Skip to content', 'Education', '3.95'],
+  },
   { path: '/playlist/experience', expect: ['1 yr 9 mo', '2 yrs 5 mo', 'Developer Analyst'] },
-  { path: '/playlist/off-the-clock', expect: ['Off the Clock', 'Volleyball', 'Cardiac Arrest'] },
-  { path: '/playlist/learning', expect: ['Currently Learning', 'AI-Assisted Engineering'] },
+  { path: '/playlist/off-the-clock', expect: ['Off the Clock', 'Volleyball', 'Cooking', 'Gym'] },
+  {
+    path: '/playlist/learning',
+    expect: ['Currently Learning', 'AI-Assisted Engineering', 'Reading List', 'Markets'],
+  },
+  { path: '/playlist/community', expect: ['Empathetech', 'CAGIS'] },
   { path: '/library', expect: ['Your Library', 'Shipped Builds', 'Off the Clock', 'Currently Learning'] },
   { path: '/playlist/featured', expect: ['Featured Release', 'Revamped Calgary Co-Op'] },
   { path: '/playlist/projects', expect: ['Shipped Builds', 'GetHomeSafe', 'Brainy Bees'] },

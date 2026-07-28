@@ -31,7 +31,13 @@ export function PlaylistPage() {
       <header
         className={`relative -mt-16 bg-linear-to-b ${playlist.gradient} px-4 pt-24 pb-6 sm:px-6 sm:pt-28`}
       >
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end">
+        {/* Several playlist gradients are light enough that white body copy on
+            them fails contrast. This scrim sits under the text only. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/70 via-black/35 to-black/10"
+        />
+        <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end">
           <Artwork
             src={playlist.cover}
             alt=""
@@ -46,16 +52,14 @@ export function PlaylistPage() {
             <h1 className="mt-2 text-3xl leading-none font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
               {playlist.title}
             </h1>
-            <p className="mt-4 max-w-2xl text-sm text-white/80 sm:text-base">
-              {playlist.description}
-            </p>
+            <p className="mt-4 max-w-2xl text-sm text-white sm:text-base">{playlist.description}</p>
             <p className="mt-4 flex flex-wrap items-center gap-2 text-sm">
               <img src={profile.avatar} alt="" className="h-6 w-6 rounded-full object-cover" />
               <span className="font-bold">{profile.name}</span>
               <span aria-hidden="true" className="text-white/60">
                 ·
               </span>
-              <span className="text-white/80">
+              <span className="text-white/90">
                 {trackCount(playlist.tracks)}
               </span>
             </p>

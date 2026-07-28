@@ -16,7 +16,7 @@ export const profile: Profile = {
   location: 'Calgary, Alberta',
   avatar: '/assets/IMG_5017.jpeg',
   tagline: 'Engineer by trade. Problem-solver by habit.',
-  bio: "I'm a Developer Analyst focused on how systems behave in real-world conditions, and on improving them thoughtfully. My work spans modern platforms and legacy systems, where patience, context and sound judgment matter as much as technical skill. I own work end to end — navigating ambiguity, evaluating edge cases, and making pragmatic decisions that hold up in production. I'm intentional about how changes get made, practical about timelines, and accountable for testing, deployment and follow-through. I work best where ideas are challenged respectfully and improved collaboratively.",
+  bio: "I build software for places the network doesn't always reach — offline-first mobile apps, industrial hardware wired into enterprise stacks, and legacy systems dragged forward without taking the business down with them. I like the problems that don't have a library for them yet.",
   stats: [
     { label: 'Building since', value: '2020' },
     { label: 'Students mentored', value: '80+' },
@@ -33,6 +33,15 @@ export const profile: Profile = {
     { label: 'Email', href: 'mailto:pgautam.dev19@gmail.com', icon: 'mail' },
   ],
   resumePdf: '/docs/PriyankaGautam_SoftwareResume.pdf',
+
+  education: {
+    school: 'Schulich School of Engineering, University of Calgary',
+    degree: 'B.Sc. Software Engineering, with Distinction',
+    years: '2019 — 2024',
+    gpa: '3.95 / 4.00',
+    logo: '/assets/schulich_logo.png',
+    honours: ['Graduated with distinction', 'First place, Engineering Design Fair'],
+  },
 
   skills: [
     {

@@ -373,21 +373,40 @@ const cagis: Track = {
   links: [{ label: 'About CAGIS', href: 'https://cagis.ca/', kind: 'site' }],
 };
 
+const empathetech: Track = {
+  slug: 'empathetech',
+  title: 'Empathetech',
+  subtitle: 'Member · community for software engineers',
+  meta: 'Member',
+  metaLabel: 'Ongoing membership',
+  plays: 'Community hours',
+  year: 'Ongoing',
+  tags: ['Community', 'Software Engineering', 'Mentorship', 'Peer Learning'],
+  summary:
+    'Empathetech is an empathy-driven community for software engineers at every stage of their career, centred on non-traditional and underrepresented people in tech, and built on the idea that good software engineers are good humans. I attend the community hours when I can and connect with other engineers there.',
+  highlights: [
+    'Member of the Empathetech community.',
+    'Attends community hours to connect with other engineers and work through technical topics.',
+    'The community runs biweekly office hours, domain demos, career support and casual hackathons.',
+  ],
+  links: [{ label: 'Empathetech', href: 'https://www.empathetech.org/', kind: 'site' }],
+};
+
 /* --- Off the clock -------------------------------------------------------- */
 
 const volleyball: Track = {
   slug: 'volleyball',
   title: 'Volleyball',
-  subtitle: 'Corporate Challenge team · Canadian Natural',
-  meta: 'Seasonal',
-  metaLabel: 'Corporate Challenge',
-  plays: 'Team sport',
+  subtitle: 'The one I would play every day if the week allowed it',
+  meta: 'Bronze',
+  metaLabel: 'Corporate Challenge — bronze',
+  plays: 'Team + rec',
   tags: ['Volleyball', 'Team Sport', 'Corporate Challenge'],
   summary:
-    'On the Canadian Natural Corporate Challenge volleyball team. The best part of a workplace league is that it puts you on a court with people you would otherwise only ever meet in a ticket queue.',
+    'My favourite way to spend an evening. I play recreationally whenever I can get a court, and I was on the Canadian Natural Corporate Challenge volleyball team — where we took bronze.',
   highlights: [
-    'Member of the Corporate Challenge volleyball team.',
-    'Plays regularly outside of the competition season too.',
+    'Bronze medal with the Canadian Natural Corporate Challenge volleyball team.',
+    'Plays recreationally year-round, entirely for the fun of it.',
   ],
   links: [],
 };
@@ -395,48 +414,79 @@ const volleyball: Track = {
 const badminton: Track = {
   slug: 'badminton',
   title: 'Badminton',
-  subtitle: 'Long-running habit',
-  meta: 'Ongoing',
-  metaLabel: 'Ongoing',
-  plays: 'Racquet sport',
-  tags: ['Badminton', 'Racquet Sport'],
+  subtitle: 'Team practices, and a long-running rivalry with my brother',
+  meta: 'Team',
+  metaLabel: 'Corporate Challenge team',
+  plays: 'Team + rec',
+  tags: ['Badminton', 'Racquet Sport', 'Corporate Challenge'],
   summary:
-    'The other racquet in the bag. Faster than it looks, and a genuinely good way to stop thinking about a bug for ninety minutes.',
-  highlights: ['Plays regularly.'],
+    'On the Corporate Challenge badminton team and at practices regularly. Outside of that it is my brother and my friends on a weekend court, which is somehow more competitive than the actual competition.',
+  highlights: [
+    'Member of the Corporate Challenge badminton team, attending regular practices.',
+    'Plays socially with family and friends in free time.',
+  ],
   links: [],
 };
 
 const corporateChallenge: Track = {
   slug: 'corporate-challenge',
   title: 'Corporate Challenge',
-  subtitle: 'Canadian Natural · multiple events',
+  subtitle: 'Canadian Natural · signed up for as much as possible',
   meta: 'Annual',
   metaLabel: 'Annual company competition',
   plays: 'Multi-event',
   tags: ['Corporate Challenge', 'Team Events', 'Community'],
   summary:
-    'Canadian Natural runs a company-wide Corporate Challenge across a spread of events, and I sign up for as many as will have me — volleyball on the team side, plus the Cardiac Arrest Challenge and others across the season.',
+    'Canadian Natural runs a company-wide competition across a wide spread of events, and I sign up for as many as will have me — volleyball and badminton on the team side, plus the Cardiac Arrest Challenge, bowling, darts and ping pong.',
   highlights: [
-    'Competed across multiple Corporate Challenge events.',
-    'Member of the volleyball team.',
-    'Took part in the Cardiac Arrest Challenge.',
+    'Competed across multiple events: volleyball, badminton, the Cardiac Arrest Challenge, bowling, darts and ping pong.',
+    'Bronze in volleyball.',
+    'The Cardiac Arrest Challenge puts the Level C CPR certification to use under time pressure.',
   ],
   links: [],
 };
 
-const cardiacArrest: Track = {
-  slug: 'cardiac-arrest-challenge',
-  title: 'Cardiac Arrest Challenge',
-  subtitle: 'Corporate Challenge event · CPR and emergency response',
-  meta: 'Event',
-  metaLabel: 'Corporate Challenge event',
-  plays: 'First aid certified',
-  tags: ['CPR', 'First Aid', 'Emergency Response', 'Corporate Challenge'],
+const gym: Track = {
+  slug: 'gym-and-walks',
+  title: 'Gym & Long Walks',
+  subtitle: 'The reliable reset',
+  meta: 'Daily-ish',
+  metaLabel: 'Ongoing habit',
+  plays: 'Reset button',
+  tags: ['Fitness', 'Walking', 'Wellbeing'],
   summary:
-    'A Corporate Challenge event built around cardiac arrest response — the practical side of the Level C CPR and Intermediate First Aid certification, under time pressure and in front of judges.',
+    'Lifting and long walks, in roughly equal measure. The gym is where the head clears, and a long walk has solved more problems for me than a second hour of staring at the screen ever has.',
+  highlights: ['Regular strength training.', 'Long walks, ideally without a destination.'],
+  links: [],
+};
+
+const friendsFamily: Track = {
+  slug: 'friends-and-family',
+  title: 'Friends & Family',
+  subtitle: 'The part that keeps everything else in proportion',
+  meta: 'Always',
+  metaLabel: 'Always on',
+  plays: 'Top of the list',
+  tags: ['Family', 'Friends', 'Community'],
+  summary:
+    'Time with the people who knew me before any of the job titles. Long dinners, worse jokes, and the standing badminton rivalry with my brother.',
+  highlights: ['Time with family and friends is the thing everything else gets scheduled around.'],
+  links: [],
+};
+
+const cooking: Track = {
+  slug: 'cooking',
+  title: 'Cooking',
+  subtitle: 'New recipes, questionable sourcing',
+  meta: 'Weekly',
+  metaLabel: 'Ongoing habit',
+  plays: 'Trial & error',
+  tags: ['Cooking', 'Food', 'Experiments'],
+  summary:
+    'I love trying new recipes. Where they come from is harder to explain — most of them appear to me in my dreams, which is a sourcing method with a genuinely mixed success rate.',
   highlights: [
-    'Competed in the Corporate Challenge Cardiac Arrest Challenge.',
-    'Holds Intermediate First Aid with Level C CPR certification.',
+    'Always working through a new recipe.',
+    'Recipe ideas arrive, unbidden, mid-sleep. Results vary.',
   ],
   links: [],
 };
@@ -453,10 +503,74 @@ const learningAi: Track = {
   year: '2026',
   tags: ['AI', 'Claude', 'Developer Tooling', 'Agents'],
   summary:
-    'Working through what AI tooling is genuinely good at in a production codebase and where it quietly is not — building with Claude, exploring agentic workflows, and forming opinions from use rather than from posts about it. This portfolio was built that way.',
+    'Working out what AI tooling is genuinely good at inside a real codebase and where it quietly is not — building with Claude, exploring agentic workflows, and forming opinions from use rather than from posts about it. This portfolio was built that way.',
   highlights: [
     'Building with Claude and agentic developer tooling.',
-    'Evaluating where AI assistance holds up against real production constraints, and where it does not.',
+    'Evaluating where AI assistance holds up against production constraints, and where it does not.',
+  ],
+  links: [],
+};
+
+const financeProject: Track = {
+  slug: 'finance-project',
+  title: 'A Finance Project',
+  subtitle: 'In build · more to come',
+  meta: 'Building',
+  metaLabel: 'In progress',
+  plays: 'Unreleased',
+  year: '2026',
+  tags: ['Finance', 'Side Project', 'In Progress'],
+  summary:
+    'Currently building something in the personal finance space. It is early and deliberately unannounced — more to come once there is something worth showing.',
+  highlights: ['In active development.'],
+  links: [],
+};
+
+const stocks: Track = {
+  slug: 'learning-markets',
+  title: 'Markets & Investing',
+  subtitle: 'Learning how the money actually moves',
+  meta: 'Ongoing',
+  metaLabel: 'Ongoing',
+  plays: 'Active study',
+  tags: ['Stocks', 'Investing', 'Finance'],
+  summary:
+    'An active study, not a passive interest — how markets price things, how to read a company rather than a ticker, and how much of the confident commentary is noise. It pairs directly with what I am building.',
+  highlights: ['Studying equities and market fundamentals.', 'Feeds the finance project above.'],
+  links: [],
+};
+
+const oilAndGas: Track = {
+  slug: 'learning-oil-and-gas',
+  title: 'Oil & Gas Domain Knowledge',
+  subtitle: 'Learning the industry the software serves',
+  meta: 'Ongoing',
+  metaLabel: 'Ongoing',
+  plays: 'Domain depth',
+  tags: ['Oil & Gas', 'Energy', 'Domain Knowledge'],
+  summary:
+    'You cannot build good software for a business you do not understand. Learning how upstream operations actually work — the equipment, the measurements, the field workflows — makes the enterprise systems I work on legible rather than abstract.',
+  highlights: [
+    'Learning upstream operations, field workflows and the instrumentation behind the data.',
+    'Directly improves the systems work at Canadian Natural.',
+  ],
+  links: [],
+};
+
+const reading: Track = {
+  slug: 'reading-list',
+  title: 'The Reading List',
+  subtitle: 'Self-help, biography, and behavioural economics',
+  meta: 'Ongoing',
+  metaLabel: 'Ongoing',
+  plays: '3 in rotation',
+  tags: ['Reading', 'Self-Improvement', 'Behavioural Economics', 'Biography'],
+  summary:
+    'A steady diet of self-help books, with Atomic Habits as the one I keep coming back to. Currently working through the Steve Jobs biography and Predictably Irrational — the second of which is quietly unsettling about how little of my decision-making is decision-making.',
+  highlights: [
+    'Favourite: Atomic Habits — James Clear.',
+    'Currently reading: Steve Jobs — Walter Isaacson.',
+    'Currently reading: Predictably Irrational — Dan Ariely.',
   ],
   links: [],
 };
@@ -516,32 +630,32 @@ export const playlists: Playlist[] = [
     description:
       'Volunteering and STEM outreach. Making software legible to people who have not been told it is for them.',
     kind: 'playlist',
-    blurb: 'STEM outreach',
+    blurb: 'Outreach and community',
     gradient: 'from-rose-500 via-rose-900 to-elevated',
     accent: '#be123c',
-    tracks: [cagis],
+    tracks: [cagis, empathetech],
   },
   {
     slug: 'off-the-clock',
     title: 'Off the Clock',
     description:
-      'Sport, competition and the things that have nothing to do with a keyboard. Volleyball, badminton, and whatever Corporate Challenge is running this year.',
+      'The things that have nothing to do with a keyboard. Volleyball, badminton, the gym, a kitchen full of half-remembered recipes, and the people who make all of it worth doing.',
     kind: 'playlist',
-    blurb: 'Sport and competition',
+    blurb: 'Sport, food and people',
     gradient: 'from-lime-500 via-green-900 to-elevated',
     accent: '#4d7c0f',
-    tracks: [volleyball, badminton, corporateChallenge, cardiacArrest],
+    tracks: [volleyball, badminton, corporateChallenge, gym, cooking, friendsFamily],
   },
   {
     slug: 'learning',
     title: 'Currently Learning',
     description:
-      'The in-progress shelf. What I am reading, building and forming opinions about right now.',
+      'The in-progress shelf — what I am reading, building and forming opinions about right now. AI tooling, markets, the energy industry, and a stack of books.',
     kind: 'playlist',
-    blurb: 'In progress',
+    blurb: '5 in rotation',
     gradient: 'from-fuchsia-500 via-indigo-900 to-elevated',
     accent: '#7e22ce',
-    tracks: [learningAi],
+    tracks: [learningAi, financeProject, stocks, oilAndGas, reading],
   },
 ];
 

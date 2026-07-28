@@ -38,7 +38,7 @@ export function ResumePage() {
         <h1 className="mt-2 text-3xl leading-none font-extrabold tracking-tight sm:text-5xl">
           The full history
         </h1>
-        <p className="mt-4 max-w-2xl text-sm text-white/80 sm:text-base">
+        <p className="mt-4 max-w-2xl text-sm text-white sm:text-base">
           Roles, education and community work in one place — {profile.name}, {profile.title}.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">

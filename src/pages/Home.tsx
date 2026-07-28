@@ -57,7 +57,7 @@ export function Home() {
               {profile.name}
             </h1>
             <p className="mt-4 max-w-2xl text-base text-white/90 sm:text-lg">{profile.tagline}</p>
-            <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-white/70">
+            <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-white/85">
               <MapPin className="h-4 w-4" aria-hidden="true" />
               {profile.location}
               <span aria-hidden="true">·</span>
@@ -66,7 +66,7 @@ export function Home() {
           </div>
         </div>
 
-        <p className="mt-8 max-w-3xl text-base leading-relaxed text-white/80">{profile.bio}</p>
+        <p className="mt-8 max-w-3xl text-base leading-relaxed text-white">{profile.bio}</p>
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <PlayButton
@@ -96,6 +96,33 @@ export function Home() {
             <StatChip key={stat.label} {...stat} />
           ))}
         </dl>
+
+        <section className="mt-6 flex flex-wrap items-center gap-5 rounded-xl border border-white/15 bg-black/30 p-5 backdrop-blur-sm">
+          <div className="grid h-16 w-16 shrink-0 place-items-center rounded-lg bg-white/95 p-2">
+            <img
+              src={profile.education.logo}
+              alt=""
+              className="max-h-full max-w-full object-contain"
+            />
+          </div>
+          <div className="min-w-0 flex-1">
+            <h2 className="text-[11px] font-bold tracking-widest text-white/70 uppercase">
+              Education
+            </h2>
+            <p className="mt-1 text-lg leading-tight font-bold">{profile.education.degree}</p>
+            <p className="mt-1 text-sm text-white/80">
+              {profile.education.school} · {profile.education.years}
+            </p>
+            <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+              <span className="font-bold text-accent-bright">GPA {profile.education.gpa}</span>
+              {profile.education.honours.map((honour) => (
+                <span key={honour} className="text-white/80">
+                  {honour}
+                </span>
+              ))}
+            </p>
+          </div>
+        </section>
       </section>
 
       <div className="px-4 sm:px-6">

@@ -80,6 +80,15 @@ export interface SkillGroup {
   items: string[];
 }
 
+export interface Education {
+  school: string;
+  degree: string;
+  years: string;
+  gpa: string;
+  logo: string;
+  honours: string[];
+}
+
 export interface Profile {
   name: string;
   title: string;
@@ -90,6 +99,7 @@ export interface Profile {
   stats: StatChipData[];
   socials: SocialLink[];
   resumePdf: string;
+  education: Education;
   skills: SkillGroup[];
   languages: string[];
   certifications: string[];
