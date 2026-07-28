@@ -54,7 +54,7 @@ export function DetailPanel() {
           src={track.artwork}
           alt={`${track.title} artwork`}
           decorative
-          isLogo={track.artworkIsLogo}
+          fit={track.artworkFit}
           gradient={playlist.gradient}
           title={track.title}
           className="aspect-square w-full"

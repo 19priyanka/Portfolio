@@ -31,7 +31,7 @@ export function PlaylistCard({ playlist }: { playlist: Playlist }) {
           src={playlist.cover}
           alt=""
           decorative
-          isLogo={playlist.coverIsLogo}
+          fit={playlist.coverFit}
           gradient={playlist.gradient}
           title={playlist.title}
           className="aspect-square w-full"

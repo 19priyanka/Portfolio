@@ -36,7 +36,7 @@ export function PlaylistPage() {
             src={playlist.cover}
             alt=""
             decorative
-            isLogo={playlist.coverIsLogo}
+            fit={playlist.coverFit}
             gradient={playlist.gradient}
             title={playlist.title}
             className="h-44 w-44 shrink-0 shadow-2xl sm:h-56 sm:w-56"

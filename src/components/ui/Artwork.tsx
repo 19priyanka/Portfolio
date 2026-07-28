@@ -1,3 +1,5 @@
+import type { ArtworkFit } from '../../types';
+
 interface ArtworkProps {
   src?: string;
   alt: string;
@@ -5,12 +7,8 @@ interface ArtworkProps {
   gradient?: string;
   /** Seeds the generated cover's initial. */
   title?: string;
-  /**
-   * The image is a brand logo rather than a screenshot. Logos here are dark
-   * artwork on transparent backgrounds, which vanishes against the dark UI, so
-   * they get a light plate behind them.
-   */
-  isLogo?: boolean;
+  /** How the image sits in the tile. Defaults to 'cover'. */
+  fit?: ArtworkFit;
   className?: string;
   rounded?: string;
   /** Renders the tile as decorative — used when adjacent text already names it. */
@@ -29,7 +27,7 @@ export function Artwork({
   alt,
   gradient = 'from-highlight to-card',
   title,
-  isLogo = false,
+  fit = 'cover',
   className = '',
   rounded = 'rounded-md',
   decorative = false,
@@ -48,7 +46,7 @@ export function Artwork({
     );
   }
 
-  if (isLogo) {
+  if (fit === 'logo') {
     return (
       <div className={`${shell} bg-linear-to-br ${gradient} p-[10%]`}>
         <div className="grid h-full w-full place-items-center rounded bg-white/95 p-[8%] shadow-inner">
@@ -64,6 +62,23 @@ export function Artwork({
     );
   }
 
+  if (fit === 'contain') {
+    return (
+      <div className={`${shell} bg-linear-to-br ${gradient} grid place-items-center p-[6%]`}>
+        <img
+          src={src}
+          alt={decorative ? '' : alt}
+          loading="lazy"
+          decoding="async"
+          className="max-h-full max-w-full object-contain"
+        />
+      </div>
+    );
+  }
+
+  // 'cover': screenshots. Anchored to the top because a tall phone capture
+  // cropped from the centre loses the header, which is the part that identifies
+  // the app.
   return (
     <div className={shell}>
       <img
@@ -71,7 +86,7 @@ export function Artwork({
         alt={decorative ? '' : alt}
         loading="lazy"
         decoding="async"
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover object-top"
       />
     </div>
   );

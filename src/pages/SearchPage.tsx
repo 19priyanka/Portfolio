@@ -99,7 +99,7 @@ export function SearchPage() {
                           src={track.artwork}
                           alt=""
                           decorative
-                          isLogo={track.artworkIsLogo}
+                          fit={track.artworkFit}
                           gradient={playlist.gradient}
                           title={track.title}
                           className="h-12 w-12 shrink-0"

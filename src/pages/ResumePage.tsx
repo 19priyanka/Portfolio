@@ -11,6 +11,8 @@ const SECTIONS: { heading: string; slug: string }[] = [
   { heading: 'Experience & education', slug: 'experience' },
   { heading: 'Leadership & mentorship', slug: 'mentorship' },
   { heading: 'Volunteering', slug: 'community' },
+  { heading: 'Currently learning', slug: 'learning' },
+  { heading: 'Off the clock', slug: 'off-the-clock' },
 ];
 
 /**
@@ -62,6 +64,59 @@ export function ResumePage() {
       </header>
 
       <div className="px-4 pb-4 sm:px-6">
+        <section className="mt-8">
+          <h2 className="text-xl font-bold sm:text-2xl">Skills</h2>
+          <div className="mt-6 space-y-5">
+            {profile.skills.map((group) => (
+              <div key={group.label}>
+                <h3 className="text-xs font-bold tracking-widest text-subdued uppercase">
+                  {group.label}
+                </h3>
+                <div className="mt-2.5 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <TagPill key={item} label={item} interactive />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div>
+              <h3 className="text-xs font-bold tracking-widest text-subdued uppercase">
+                Certifications
+              </h3>
+              <ul className="mt-2.5 space-y-1.5">
+                {profile.certifications.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-subdued">
+                    <span
+                      aria-hidden="true"
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xs font-bold tracking-widest text-subdued uppercase">
+                Languages
+              </h3>
+              <ul className="mt-2.5 space-y-1.5">
+                {profile.languages.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-subdued">
+                    <span
+                      aria-hidden="true"
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {sections.map(({ heading, playlist }) => (
           <section key={playlist.slug} className="mt-12 first:mt-8">
             <h2 className="text-xl font-bold sm:text-2xl">{heading}</h2>
@@ -89,7 +144,7 @@ function TimelineEntry({ track, playlist }: { track: Track; playlist: Playlist }
           src={track.artwork}
           alt=""
           decorative
-          isLogo={track.artworkIsLogo}
+          fit={track.artworkFit}
           gradient={playlist.gradient}
           title={track.title}
           className="h-14 w-14 shrink-0"
@@ -99,7 +154,7 @@ function TimelineEntry({ track, playlist }: { track: Track; playlist: Playlist }
           <h3 className="text-lg font-bold">{track.title}</h3>
           <p className="text-sm text-subdued">
             {track.subtitle}
-            {track.year && <span> · {track.year}</span>}
+            <span> · {track.metaLabel ?? track.meta}</span>
           </p>
 
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-subdued">{track.summary}</p>

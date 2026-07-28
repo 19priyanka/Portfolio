@@ -67,7 +67,7 @@ export function TrackRow({ playlist, track, index, onOpen }: TrackRowProps) {
           src={track.artwork}
           alt=""
           decorative
-          isLogo={track.artworkIsLogo}
+          fit={track.artworkFit}
           gradient={playlist.gradient}
           title={track.title}
           className="h-11 w-11 sm:h-13 sm:w-13"

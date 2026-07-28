@@ -1,3 +1,5 @@
+export type ArtworkFit = 'logo' | 'cover' | 'contain';
+
 export type LinkKind = 'code' | 'demo' | 'video' | 'design' | 'doc' | 'site';
 
 export interface TrackLink {
@@ -21,8 +23,13 @@ export interface Track {
   subtitle: string;
   /** Falls back to a generated cover when absent. */
   artwork?: string;
-  /** Treat `artwork` as a logo: rendered on a light plate so it stays legible. */
-  artworkIsLogo?: boolean;
+  /**
+   * How the image should sit in its tile.
+   *   logo    dark-on-transparent brand mark; gets a light plate behind it
+   *   cover   a screenshot; fills the tile, anchored to the top
+   *   contain the whole image must be visible
+   */
+  artworkFit?: ArtworkFit;
   /** Right-hand column of the track row. Tenure for roles, timespan for projects. */
   meta: string;
   /** Longer form of `meta`, shown in the detail panel. */
@@ -46,8 +53,8 @@ export interface Playlist {
   kind: PlaylistKind;
   /** Falls back to a generated cover when absent. */
   cover?: string;
-  /** Treat `cover` as a logo: rendered on a light plate so it stays legible. */
-  coverIsLogo?: boolean;
+  /** How the cover image sits in its tile. See Track.artworkFit. */
+  coverFit?: ArtworkFit;
   /** Short line under the playlist title in the library, e.g. "6 builds". */
   blurb: string;
   /** Tailwind gradient classes for the header wash and card fallback. */
@@ -68,6 +75,11 @@ export interface SocialLink {
   icon: 'linkedin' | 'github' | 'mail';
 }
 
+export interface SkillGroup {
+  label: string;
+  items: string[];
+}
+
 export interface Profile {
   name: string;
   title: string;
@@ -78,5 +90,8 @@ export interface Profile {
   stats: StatChipData[];
   socials: SocialLink[];
   resumePdf: string;
+  skills: SkillGroup[];
+  languages: string[];
+  certifications: string[];
   employers: { name: string; logo: string; height: string }[];
 }

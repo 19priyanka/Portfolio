@@ -47,7 +47,7 @@ export function NowPlayingBar() {
           src={track.artwork}
           alt=""
           decorative
-          isLogo={track.artworkIsLogo}
+          fit={track.artworkFit}
           gradient={playlist.gradient}
           title={track.title}
           className="h-11 w-11 shrink-0 sm:h-14 sm:w-14"

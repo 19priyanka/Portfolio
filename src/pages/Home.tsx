@@ -110,7 +110,7 @@ export function Home() {
               src={featuredTrack.artwork}
               alt=""
               decorative
-              isLogo={featuredTrack.artworkIsLogo}
+              fit={featuredTrack.artworkFit}
               gradient={featuredPlaylist.gradient}
               title={featuredTrack.title}
               className="h-40 w-40 shrink-0 sm:h-44 sm:w-44"

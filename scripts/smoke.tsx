@@ -20,11 +20,14 @@ interface Case {
 
 const CASES: Case[] = [
   { path: '/', expect: ['Priyanka Gautam', 'Featured release', 'Top genres', 'Skip to content'] },
-  { path: '/playlist/experience', expect: ['Current', 'Developer Analyst'] },
-  { path: '/library', expect: ['Your Library', 'Shipped Builds', 'Community Sessions'] },
+  { path: '/playlist/experience', expect: ['1 yr 9 mo', '2 yrs 5 mo', 'Developer Analyst'] },
+  { path: '/playlist/off-the-clock', expect: ['Off the Clock', 'Volleyball', 'Cardiac Arrest'] },
+  { path: '/playlist/learning', expect: ['Currently Learning', 'AI-Assisted Engineering'] },
+  { path: '/library', expect: ['Your Library', 'Shipped Builds', 'Off the Clock', 'Currently Learning'] },
   { path: '/playlist/featured', expect: ['Featured Release', 'Revamped Calgary Co-Op'] },
   { path: '/playlist/projects', expect: ['Shipped Builds', 'GetHomeSafe', 'Brainy Bees'] },
   { path: '/playlist/experience', expect: ['On Repeat', 'Developer Analyst', 'New Relic'] },
+  { path: '/playlist/mentorship', expect: ['AASEE', 'Residence'] },
   { path: '/playlist/mentorship', expect: ['Paying It Forward', 'Schulich Student Mentorship'] },
   { path: '/playlist/community', expect: ['Community Sessions', 'CAGIS'] },
   // The detail panel opens from an effect, which renderToString does not run,
@@ -34,7 +37,7 @@ const CASES: Case[] = [
   { path: '/search', expect: ['Browse by genre', 'React Native'] },
   { path: '/search?q=django', expect: ['result', 'Revamped Calgary Co-Op'] },
   { path: '/search?q=zzzznotathing', expect: ['Nothing matched that'] },
-  { path: '/resume', expect: ['The full history', 'Download résumé', 'Developer Analyst'] },
+  { path: '/resume', expect: ['The full history', 'Download résumé', 'Developer Analyst', 'Skills', 'Blazor', 'H2S Alive'] },
   { path: '/nope', expect: ['find that track'] },
 ];
 
