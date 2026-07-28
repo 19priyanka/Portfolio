@@ -161,7 +161,7 @@ export function DetailPanel() {
             className={
               isDesktop
                 ? 'my-2 mr-2 shrink-0 overflow-hidden rounded-lg bg-elevated'
-                : 'fixed inset-y-0 right-0 z-50 w-[min(24rem,90vw)] bg-elevated shadow-2xl'
+                : 'fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-elevated shadow-2xl'
             }
           >
             <div className={isDesktop ? 'h-full w-[360px]' : 'h-full'}>{body}</div>
