@@ -5,14 +5,16 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
 # production
 /build
+/dist
+
+# smoke test output
+/.smoke
 
 # misc
 .DS_Store
+*.local
 .env.local
 .env.development.local
 .env.test.local
@@ -21,3 +23,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# asset drop folder (local only)
+/assets-inbox

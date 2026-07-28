@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio for Priyanka Gautam, built as a Spotify-style client: content is
+organized into playlists of tracks rather than conventional portfolio sections.
 
-## Available Scripts
+Stack: Vite, React 18, TypeScript, Tailwind CSS v4, Framer Motion, React Router 7.
 
-In the project directory, you can run:
+## Scripts
 
-### `npm start`
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Dev server on http://localhost:3000 |
+| `npm run build` | Type check, then production build into `build/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm run smoke` | Render every route server-side and assert on the markup |
+| `npm run verify` | typecheck + smoke + build |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Editing content
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+All content lives in `src/data/` — nothing is hardcoded in components.
 
-### `npm test`
+- `src/data/profile.ts` — name, bio, stats, social links, employer logos
+- `src/data/playlists.ts` — every playlist and track
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A **track** is one piece of work: a project, a role, or a community commitment. The player
+metaphor maps onto real data:
 
-### `npm run build`
+- `duration` — months of active work, written `mm:ss` (eight months reads `8:00`)
+- `plays` — a reach metric for that work
+- `tags` — the actual technology stack, rendered as genre pills
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Adding a project means adding a `Track` object and listing it in a playlist's `tracks`
+array. Artwork goes in `public/assets/`; if a track has no `artwork`, it falls back to a
+gradient tile rather than a broken image.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Values commented `VERIFY` in `src/data/playlists.ts` are estimates derived from the
+> résumé summary — dates and tenure lengths in particular. Confirm them before deploying.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Architecture
 
-### `npm run eject`
+```
+src/
+  App.tsx                  route tree
+  types.ts                 content model
+  data/                    all content
+  context/PlayerContext    player state (no audio — a metaphor over real data)
+  hooks/                   media query, scroll progress, reduced motion
+  components/layout/       AppShell, Sidebar, TopBar, NowPlayingBar, MobileTabBar
+  components/ui/           presentational primitives
+  components/playlist/     playlist card, track list, track row, track detail
+  pages/                   one file per route
+scripts/smoke.tsx          route smoke test
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Two decisions worth knowing before changing layout code:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **The main pane is the only scroll container.** `body` has `overflow: hidden`. This is
+   what keeps nested panes and `100vh` children from fighting, and guarantees the page
+   never scrolls horizontally. Adding a second scroll container will reintroduce that
+   class of bug.
+2. **The player controls do real work.** Nothing in `NowPlayingBar` is decorative — play,
+   pause, next, previous, shuffle, repeat and seek all change observable state, so their
+   `aria-pressed` values are honest. Don't add a control that reports state it doesn't have
+   (a volume slider was left out for exactly this reason).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Routes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`/` · `/library` · `/playlist/:slug` (`?track=<slug>` deep-links an expanded track) ·
+`/search` · `/resume`
 
-## Learn More
+Paths from the previous version of the site (`/ProjectsHomepage`, `/CapstoneHomepage`,
+`/ExtracurricularHomepage`, `/ResumeHomepage`) redirect to their new equivalents.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm run build` outputs to `build/` — the same directory the previous Create React App
+setup used, so existing deploy configuration keeps working. `public/_redirects` sends all
+paths to `index.html` so client-side routes survive a hard refresh on Netlify. On another
+host, configure the equivalent SPA fallback.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The design spec is at `docs/superpowers/specs/2026-07-28-spotify-portfolio-design.md`.
