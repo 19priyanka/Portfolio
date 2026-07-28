@@ -18,7 +18,7 @@ export const profile: Profile = {
   tagline: 'Engineer by trade. Problem-solver by habit.',
   bio: "I build software for places the network doesn't always reach. Offline-first mobile apps, industrial hardware wired into enterprise stacks, and legacy systems dragged forward without taking the business down with them. I like the problems that don't have a library for them yet.",
   musicNote:
-    "Also, I love music. Not casually. It's the thing running underneath everything else, the reason a commute is bearable and the reason I get anything finished. So when it came time to build this, a record collection was the only shape that felt honest. Everything here is laid out the way I actually think about it: things worth putting on repeat, things I'm still working through, and a few tracks I'm quietly proud of.",
+    "I love music, and not casually. It's the thing that keeps everything else standing upright: it settles the noise, softens the hard days, and it pulses under everything I do. So when it came time to build this, a record collection was the only shape that felt honest. Everything here is laid out the way I actually think about it. Things worth putting on repeat, things I'm still working through, and a few tracks I'm quietly proud of.",
   stats: [
     { label: 'Building since', value: '2020' },
     { label: 'Students mentored', value: '80+' },
