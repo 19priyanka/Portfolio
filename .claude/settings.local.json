@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'docs: add Spotify-style portfolio rebuild design spec *)",
+      "Bash(git mv *)",
+      "Bash(git config *)",
+      "Bash(git commit -q -m 'chore: add design spec, move assets to public/ *)",
+      "Bash(npm install *)",
+      "Bash(node -e \"const p=require\\('./package.json'\\);console.log\\(JSON.stringify\\({d:p.dependencies,dev:p.devDependencies},null,1\\)\\)\")",
+      "Bash(node *)",
+      "Bash(npm run *)",
+      "Bash(npx vite *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/playlist/projects)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/assets/BrainyBeesLogo.png)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/docs/PriyankaGautam_SoftwareResume.pdf)",
+      "Bash(curl -s http://localhost:4173/)",
+      "Bash(kill %1)",
+      "Bash(git checkout *)",
+      "Bash(git commit -q -m 'feat: rebuild portfolio as a Spotify-style client *)",
+      "Bash(git branch *)",
+      "Bash(git commit -q -m 'fix: anchor playlist card play button to the artwork *)",
+      "Bash(git rebase *)",
+      "Bash(echo \"tree clean: $?\")",
+      "Bash(ls /)",
+      "Read(//workspace/**)",
+      "Bash(find / -maxdepth 3 -name \"docker-compose*.yml\")",
+      "WebSearch",
+      "Bash(npx tsc *)",
+      "Bash(git commit -q -m 'feat: education on profile, richer personal playlists, contrast fixes *)",
+      "Bash(git commit -q -m 'feat: explain the record-collection conceit on the profile *)",
+      "Bash(git commit -q -m 'fix: theme token named '\\\\''base'\\\\'' turned text-base into black text *)",
+      "Bash(git commit -q -m 'style: rewrite the music note in Priyanka'\\\\''s own words *)",
+      "Bash(gh auth *)",
+      "Bash(timeout 25 git push --dry-run origin spotify-rebuild)",
+      "Bash(timeout 30 git ls-remote --heads origin)"
+    ]
+  }
+}
