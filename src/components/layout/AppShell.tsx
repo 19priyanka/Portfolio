@@ -58,10 +58,17 @@ export function AppShell() {
       >
         Skip to content
       </a>
-      <div className="grid h-dvh grid-rows-[1fr_auto] overflow-x-clip bg-canvas">
+      {/* grid-cols-[minmax(0,1fr)] is load-bearing. Tailwind's bare `grid` leaves
+          the single implicit column at `auto`, which floors at the content's
+          intrinsic width — the player bar's track title is `white-space: nowrap`,
+          so on a phone the whole shell was sized to that string and every row
+          (top bar, tab bar) got stretched past the viewport. An explicit
+          minmax(0, 1fr) track ignores intrinsic width and the `min-w-0`s below
+          let the flex children shrink into it so `truncate` can do its job. */}
+      <div className="grid h-dvh w-full grid-cols-[minmax(0,1fr)] grid-rows-[1fr_auto] overflow-x-clip bg-canvas">
         {/* flex rather than grid columns: the detail panel animates its own
             width open and closed, which a fixed grid template would fight. */}
-        <div className="flex min-h-0">
+        <div className="flex min-h-0 min-w-0">
           <Sidebar />
 
           {/* The only scroll container in the application. Keeping scrolling in
@@ -69,7 +76,7 @@ export function AppShell() {
               fighting, and guarantees the page never scrolls sideways. */}
           <div
             ref={mainRef}
-            className="scrollbar-spotify relative min-w-0 overflow-x-clip overflow-y-auto md:m-2 md:ml-0 md:rounded-lg md:bg-elevated"
+            className="scrollbar-spotify relative min-w-0 flex-1 overflow-x-clip overflow-y-auto md:m-2 md:ml-0 md:rounded-lg md:bg-elevated"
           >
             <TopBar progress={progress} title={chrome.title} accent={chrome.accent} />
             <main id="main" tabIndex={-1} className="pb-10 focus:outline-none">
@@ -80,7 +87,7 @@ export function AppShell() {
           <DetailPanel />
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex min-w-0 flex-col">
           <NowPlayingBar />
           <MobileTabBar />
         </div>

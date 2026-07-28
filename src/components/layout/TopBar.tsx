@@ -31,12 +31,12 @@ export function TopBar({ progress, title, accent = '#121212' }: TopBarProps) {
         style={{ backgroundColor: accent, opacity: progress }}
       />
 
-      <div className="flex items-center gap-2">
+      <div className="flex min-w-0 items-center gap-2">
         <button
           type="button"
           onClick={() => navigate(-1)}
           aria-label="Go back"
-          className="grid h-8 w-8 place-items-center rounded-full bg-black/60 text-ink transition hover:bg-black/80"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-black/60 text-ink transition hover:bg-black/80"
         >
           <ChevronLeft className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -44,7 +44,7 @@ export function TopBar({ progress, title, accent = '#121212' }: TopBarProps) {
           type="button"
           onClick={() => navigate(1)}
           aria-label="Go forward"
-          className="grid h-8 w-8 place-items-center rounded-full bg-black/60 text-ink transition hover:bg-black/80"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-black/60 text-ink transition hover:bg-black/80"
         >
           <ChevronRight className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -61,7 +61,7 @@ export function TopBar({ progress, title, accent = '#121212' }: TopBarProps) {
         )}
       </div>
 
-      <div className="flex items-center gap-1.5">
+      <div className="flex shrink-0 items-center gap-1.5">
         <a
           href={profile.resumePdf}
           download

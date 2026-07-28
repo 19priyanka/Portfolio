@@ -178,11 +178,11 @@ export function Home() {
         {/* Employers */}
         <section className="mt-12">
           <h2 className="mb-5 text-xl font-bold sm:text-2xl">Appears on</h2>
-          <ul className="flex flex-wrap items-center gap-x-10 gap-y-6 rounded-xl bg-card px-6 py-7">
+          <ul className="flex flex-wrap items-center gap-x-5 gap-y-4 rounded-xl bg-card px-4 py-5 sm:gap-x-10 sm:gap-y-6 sm:px-6 sm:py-7">
             {profile.employers.map((employer) => (
               <li
                 key={employer.name}
-                className="grid h-20 place-items-center rounded-lg bg-white/95 px-6 transition-transform duration-200 hover:scale-105"
+                className="grid h-16 max-w-full place-items-center rounded-lg bg-white/95 px-4 transition-transform duration-200 hover:scale-105 sm:h-20 sm:px-6"
               >
                 <img
                   src={employer.logo}

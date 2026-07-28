@@ -47,13 +47,15 @@ export function SearchPage() {
             className="pointer-events-none absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-subdued"
             aria-hidden="true"
           />
+          {/* 16px text on phones: iOS Safari zooms the whole page in when a
+              focused input is smaller than that, and never zooms back out. */}
           <input
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Projects, roles, technologies…"
             aria-label="Search projects, roles and technologies"
-            className="w-full rounded-full border border-line bg-card py-3 pr-4 pl-12 text-sm text-ink placeholder:text-subdued focus:border-white/40 focus:outline-none"
+            className="w-full rounded-full border border-line bg-card py-3 pr-4 pl-12 text-base text-ink placeholder:text-subdued focus:border-white/40 focus:outline-none sm:text-sm"
           />
         </div>
 

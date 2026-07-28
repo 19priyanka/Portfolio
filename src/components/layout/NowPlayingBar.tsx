@@ -40,7 +40,7 @@ export function NowPlayingBar() {
   return (
     <footer
       aria-label="Player"
-      className="relative z-40 flex h-player items-center gap-3 border-t border-line bg-elevated px-3 sm:gap-4 sm:px-5"
+      className="relative z-40 flex h-[4.25rem] min-w-0 items-center gap-3 border-t border-line bg-elevated px-3 sm:h-player sm:gap-4 sm:px-5"
     >
       <div className="flex min-w-0 flex-1 items-center gap-3 sm:w-[30%] sm:flex-none">
         <Artwork
@@ -68,7 +68,7 @@ export function NowPlayingBar() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-1 sm:flex-1">
+      <div className="flex shrink-0 flex-col items-center gap-1 sm:flex-1">
         <div className="flex items-center gap-2 sm:gap-4">
           <button
             type="button"
