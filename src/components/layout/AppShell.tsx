@@ -32,7 +32,7 @@ export function usePageChrome(chrome: Chrome) {
     setChrome?.({ title, accent });
     document.title = title
       ? `${title} · Priyanka Gautam`
-      : 'Priyanka Gautam — Software Engineer';
+      : 'Priyanka Gautam, Software Engineer';
   }, [setChrome, title, accent]);
 }
 

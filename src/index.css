@@ -112,14 +112,6 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
-  /* Truncate to a fixed number of lines without knowing the line height. */
-  .line-clamp-2-safe {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
 }
 
 @keyframes eq-bar {

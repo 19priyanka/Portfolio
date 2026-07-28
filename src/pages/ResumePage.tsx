@@ -39,7 +39,7 @@ export function ResumePage() {
           The full history
         </h1>
         <p className="mt-4 max-w-2xl text-sm text-white sm:text-base">
-          Roles, education and community work in one place — {profile.name}, {profile.title}.
+          Roles, education and community work in one place. {profile.name}, {profile.title}.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <a

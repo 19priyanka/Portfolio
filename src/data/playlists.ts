@@ -27,7 +27,7 @@ const capstone: Track = {
   artwork: '/assets/capstone-preview.png',
   artworkFit: 'cover',
   meta: '8 months',
-  metaLabel: 'September 2023 — April 2024',
+  metaLabel: 'September 2023 to April 2024',
   plays: '1st place',
   year: '2024',
   tags: ['React Native', 'Django', 'Python', 'Offline-First', 'Data Sync'],
@@ -53,7 +53,7 @@ const getHomeSafe: Track = {
   plays: 'Privacy-first',
   tags: ['React Native', 'TypeScript', 'Node.js', 'Express', 'MongoDB'],
   summary:
-    'A distributed mobile app for the walk home. It shares the minimum location necessary and monitors a session rather than tracking you continuously — a privacy-first approach that sets it apart from conventional location-sharing apps. Friends get a confirmation when you arrive.',
+    'A distributed mobile app for the walk home. It shares the minimum location necessary and monitors a session rather than tracking you continuously. That privacy-first approach is what sets it apart from conventional location-sharing apps. Friends get a confirmation when you arrive.',
   highlights: [
     'Session-based monitoring rather than continuous tracking, so sharing ends when the walk does.',
     'Minimal location sharing by design, built privacy-first.',
@@ -104,7 +104,7 @@ const vrLayerSense: Track = {
   plays: '+17% success',
   tags: ['C++', 'OpenGL', 'Unity', 'OpenHaptics', 'Phantom Omni', 'Blender'],
   summary:
-    'A VR trainer for needle placement that varies haptic feedback per skin layer as the needle passes through it. Two feedback models were built and evaluated against each other — and the varied-feedback approach produced a 17% higher success rate than the alternative.',
+    'A VR trainer for needle placement that varies haptic feedback per skin layer as the needle passes through it. Two feedback models were built and evaluated against each other, and the varied-feedback approach produced a 17% higher success rate than the alternative.',
   highlights: [
     'Layer-by-layer skin puncture simulation with force feedback tuned per tissue type.',
     'Delivered a 17% higher success rate through varying haptic feedback per skin layer.',
@@ -163,7 +163,7 @@ const mnist: Track = {
   plays: 'CNN won',
   tags: ['Python', 'Machine Learning', 'CNN', 'SVM', 'Random Forest', 'Pandas'],
   summary:
-    'A head-to-head comparison of Random Forest, SVM and CNN on MNIST, scored not just on accuracy but on model complexity and training cost. The CNN won on accuracy, which is the boring half of the answer — the interesting half is what each model costs to get there.',
+    'A head-to-head comparison of Random Forest, SVM and CNN on MNIST, scored not just on accuracy but on model complexity and training cost. The CNN won on accuracy, which is the boring half of the answer. The interesting half is what each model costs to get there.',
   highlights: [
     'Three model families trained and evaluated on the same MNIST split.',
     'Compared on accuracy, complexity and computational efficiency rather than accuracy alone.',
@@ -193,12 +193,12 @@ const cnrl: Track = {
   artwork: '/assets/Canadian_Natural_Logo.svg',
   artworkFit: 'logo',
   meta: '1 yr 9 mo',
-  metaLabel: 'November 2024 — present',
+  metaLabel: 'November 2024 to present',
   plays: 'Current role',
   year: 'Present',
   tags: ['Angular', 'Blazor', 'C#', 'VB.NET', 'SQL', 'PL/SQL', 'Legacy Modernization'],
   summary:
-    'Re-architecting a large-scale, mission-critical application — the kind of work where the migration plan matters more than the framework choice, because the old system cannot go down while the new one comes up. A good deal of it sits where industrial field hardware meets the enterprise stack. Promoted from Full Stack Developer to Developer Analyst in January 2026.',
+    "Re-architecting a large-scale, mission-critical application. It's the kind of work where the migration plan matters more than the framework choice, because the old system can't go down while the new one comes up. A good deal of it sits where industrial field hardware meets the enterprise stack. Promoted from Full Stack Developer to Developer Analyst in January 2026.",
   highlights: [
     'Contributing to the re-architecture of a large-scale mission-critical application, improving scalability, performance and maintainability.',
     'Building full-stack solutions across Angular, Blazor, C#, VB.NET and SQL/PL/SQL in a complex enterprise environment.',
@@ -217,11 +217,11 @@ const newRelic: Track = {
   artwork: '/assets/new_relic_logo.png',
   artworkFit: 'logo',
   meta: '2 yrs 5 mo',
-  metaLabel: 'May 2021 — September 2023',
+  metaLabel: 'May 2021 to September 2023',
   plays: '4+ teams',
   tags: ['React', 'TypeScript', 'Java', 'Redux', 'NRQL', 'Distributed Tracing'],
   summary:
-    'Built the Distributed Tracing Setup Wizard — the path that takes a customer from "tracing is misconfigured" to "tracing works" without a support ticket — plus ranking algorithms over performance signals and improvements to the internal configuration tooling other engineering teams depend on.',
+    'Built the Distributed Tracing Setup Wizard, the path that takes a customer from "tracing is misconfigured" to "tracing works" without a support ticket. Also ranking algorithms over performance signals, and improvements to the internal configuration tooling other engineering teams depend on.',
   highlights: [
     'Delivered a Distributed Tracing Setup Wizard letting customers find instrumentation gaps and fix them through guided documentation.',
     'Designed an algorithm ranking monitored applications by performance signals.',
@@ -240,11 +240,11 @@ const learningAssistant: Track = {
   artwork: '/assets/schulich_logo.png',
   artworkFit: 'logo',
   meta: '4 yrs',
-  metaLabel: 'May 2020 — April 2024',
+  metaLabel: 'May 2020 to April 2024',
   plays: '80+ mentored',
   tags: ['Mentorship', 'Data Structures', 'Operating Systems', 'Computer Networks', 'Teaching'],
   summary:
-    'Four years supporting engineering students one-on-one and in groups — programming, data structures and algorithms, operating systems, computer networks and advanced engineering mathematics. Much of the job was picking up an unfamiliar language fast enough to be useful to whoever walked in.',
+    'Four years supporting engineering students one-on-one and in groups, across programming, data structures and algorithms, operating systems, computer networks and advanced engineering mathematics. Much of the job was picking up an unfamiliar language fast enough to be useful to whoever walked in.',
   highlights: [
     'Mentored and supported 80+ engineering students through one-on-one and group sessions.',
     'Tutored across programming, data structures and algorithms, operating systems, computer networks and engineering mathematics.',
@@ -259,8 +259,8 @@ const education: Track = {
   subtitle: 'Schulich School of Engineering, University of Calgary',
   artwork: '/assets/schulich_logo.png',
   artworkFit: 'logo',
-  meta: '2019—2024',
-  metaLabel: '2019 — 2024',
+  meta: 'Class of 2024',
+  metaLabel: '2019 to 2024',
   plays: '3.95 / 4.00',
   tags: ['Software Engineering', 'Distinction', 'Design Fair Winner'],
   summary:
@@ -278,9 +278,9 @@ const education: Track = {
 const aasee: Track = {
   slug: 'aasee',
   title: 'Fundraising Assistant & Head of Media Relations',
-  subtitle: 'AASEE — Advancement of Science and Engineering Education',
+  subtitle: 'AASEE, Advancement of Science and Engineering Education',
   meta: '3 yrs 4 mo',
-  metaLabel: 'January 2020 — April 2023',
+  metaLabel: 'January 2020 to April 2023',
   plays: 'Two roles',
   tags: ['Fundraising', 'Grant Writing', 'Media Relations', 'Content Strategy'],
   summary:
@@ -306,7 +306,7 @@ const mentorshipProgram: Track = {
   year: 'Ongoing',
   tags: ['Mentorship', 'Engineering', 'Community'],
   summary:
-    'Guiding incoming engineering undergrads through the part nobody writes down — course selection, internship hunting, and the general question of whether feeling lost in first year is normal. It is.',
+    'Guiding incoming engineering undergrads through the part nobody writes down: course selection, internship hunting, and the general question of whether feeling lost in first year is normal. It is.',
   highlights: [
     'Active mentor to incoming Schulich engineering undergraduates.',
     'Focus on course planning, internship search and navigating first-year engineering.',
@@ -323,7 +323,7 @@ const unitedWay: Track = {
   plays: 'Head Chair',
   tags: ['Leadership', 'Fundraising', 'Event Ops'],
   summary:
-    'Head Chair of the annual CNQBay online charity auction supporting United Way — running the campaign end to end, from donation sourcing through the auction platform itself and the people operating it.',
+    'Head Chair of the annual CNQBay online charity auction supporting United Way, running the campaign end to end, from donation sourcing through the auction platform itself and the people operating it.',
   highlights: [
     'Head Chair of the annual online charity auction in support of United Way.',
     'Ownership of the full campaign: sourcing, platform, promotion and operations.',
@@ -337,11 +337,11 @@ const residence: Track = {
   title: 'Student Representative of Residence',
   subtitle: 'Residence Student Association · University of Calgary',
   meta: '8 months',
-  metaLabel: 'September 2019 — April 2020',
+  metaLabel: 'September 2019 to April 2020',
   plays: '$1,200 budget',
   tags: ['Leadership', 'Event Planning', 'Advocacy'],
   summary:
-    'Liaison between residents and leadership in first year — running monthly community events on a small budget and carrying student concerns upward where they could actually be acted on.',
+    'Liaison between residents and leadership in first year, running monthly community events on a small budget and carrying student concerns upward where they could actually be acted on.',
   highlights: [
     'Represented and advocated for student needs as liaison between residents and leadership.',
     'Planned and ran monthly community events to build engagement.',
@@ -354,7 +354,7 @@ const residence: Track = {
 
 const cagis: Track = {
   slug: 'cagis',
-  title: 'CAGIS — STEM Expert Volunteer',
+  title: 'CAGIS STEM Expert Volunteer',
   subtitle: 'Canadian Association for Girls in Science',
   artwork: '/assets/CAGISLogo.png',
   artworkFit: 'logo',
@@ -364,7 +364,7 @@ const cagis: Track = {
   year: 'Ongoing',
   tags: ['STEM Outreach', 'Youth', 'Workshop Design', 'Volunteering'],
   summary:
-    "CAGIS is Canada's largest and longest-running STEM club for girls and gender-diverse youth aged 7 to 17, running since 1992. I design and deliver the software sessions — turning things like algorithms and debugging into activities a nine-year-old will actually want to finish.",
+    "CAGIS is Canada's largest and longest-running STEM club for girls and gender-diverse youth aged 7 to 17, running since 1992. I design and deliver the software sessions, turning things like algorithms and debugging into activities a nine-year-old will actually want to finish.",
   highlights: [
     'Design and deliver interactive events explaining software concepts to youth aged 7–17.',
     'Build age-appropriate presentations and hands-on activities from scratch.',
@@ -399,11 +399,11 @@ const volleyball: Track = {
   title: 'Volleyball',
   subtitle: 'The one I would play every day if the week allowed it',
   meta: 'Bronze',
-  metaLabel: 'Corporate Challenge — bronze',
+  metaLabel: 'Corporate Challenge bronze',
   plays: 'Team + rec',
   tags: ['Volleyball', 'Team Sport', 'Corporate Challenge'],
   summary:
-    'My favourite way to spend an evening. I play recreationally whenever I can get a court, and I was on the Canadian Natural Corporate Challenge volleyball team — where we took bronze.',
+    'My favourite way to spend an evening. I play recreationally whenever I can get a court, and I was on the Canadian Natural Corporate Challenge volleyball team, where we took bronze.',
   highlights: [
     'Bronze medal with the Canadian Natural Corporate Challenge volleyball team.',
     'Plays recreationally year-round, entirely for the fun of it.',
@@ -437,7 +437,7 @@ const corporateChallenge: Track = {
   plays: 'Multi-event',
   tags: ['Corporate Challenge', 'Team Events', 'Community'],
   summary:
-    'Canadian Natural runs a company-wide competition across a wide spread of events, and I sign up for as many as will have me — volleyball and badminton on the team side, plus the Cardiac Arrest Challenge, bowling, darts and ping pong.',
+    'Canadian Natural runs a company-wide competition across a wide spread of events, and I sign up for as many as will have me: volleyball and badminton on the team side, plus the Cardiac Arrest Challenge, bowling, darts and ping pong.',
   highlights: [
     'Competed across multiple events: volleyball, badminton, the Cardiac Arrest Challenge, bowling, darts and ping pong.',
     'Bronze in volleyball.',
@@ -483,7 +483,7 @@ const cooking: Track = {
   plays: 'Trial & error',
   tags: ['Cooking', 'Food', 'Experiments'],
   summary:
-    'I love trying new recipes. Where they come from is harder to explain — most of them appear to me in my dreams, which is a sourcing method with a genuinely mixed success rate.',
+    'I love trying new recipes. Where they come from is harder to explain. Most of them appear to me in my dreams, which is a sourcing method with a genuinely mixed success rate.',
   highlights: [
     'Always working through a new recipe.',
     'Recipe ideas arrive, unbidden, mid-sleep. Results vary.',
@@ -503,7 +503,7 @@ const learningAi: Track = {
   year: '2026',
   tags: ['AI', 'Claude', 'Developer Tooling', 'Agents'],
   summary:
-    'Working out what AI tooling is genuinely good at inside a real codebase and where it quietly is not — building with Claude, exploring agentic workflows, and forming opinions from use rather than from posts about it. This portfolio was built that way.',
+    "Working out what AI tooling is genuinely good at inside a real codebase, and where it quietly isn't. Building with Claude, exploring agentic workflows, and forming opinions from use rather than from posts about it. This portfolio was built that way.",
   highlights: [
     'Building with Claude and agentic developer tooling.',
     'Evaluating where AI assistance holds up against production constraints, and where it does not.',
@@ -521,7 +521,7 @@ const financeProject: Track = {
   year: '2026',
   tags: ['Finance', 'Side Project', 'In Progress'],
   summary:
-    'Currently building something in the personal finance space. It is early and deliberately unannounced — more to come once there is something worth showing.',
+    "Currently building something in the personal finance space. It's early and deliberately unannounced. More to come once there's something worth showing.",
   highlights: ['In active development.'],
   links: [],
 };
@@ -535,7 +535,7 @@ const stocks: Track = {
   plays: 'Active study',
   tags: ['Stocks', 'Investing', 'Finance'],
   summary:
-    'An active study, not a passive interest — how markets price things, how to read a company rather than a ticker, and how much of the confident commentary is noise. It pairs directly with what I am building.',
+    "An active study, not a passive interest. How markets price things, how to read a company rather than a ticker, and how much of the confident commentary is noise. It pairs directly with what I'm building.",
   highlights: ['Studying equities and market fundamentals.', 'Feeds the finance project above.'],
   links: [],
 };
@@ -549,7 +549,7 @@ const oilAndGas: Track = {
   plays: 'Domain depth',
   tags: ['Oil & Gas', 'Energy', 'Domain Knowledge'],
   summary:
-    'You cannot build good software for a business you do not understand. Learning how upstream operations actually work — the equipment, the measurements, the field workflows — makes the enterprise systems I work on legible rather than abstract.',
+    'You cannot build good software for a business you do not understand. Learning how upstream operations actually work, the equipment and the measurements and the field workflows, makes the enterprise systems I work on legible rather than abstract.',
   highlights: [
     'Learning upstream operations, field workflows and the instrumentation behind the data.',
     'Directly improves the systems work at Canadian Natural.',
@@ -566,11 +566,11 @@ const reading: Track = {
   plays: '3 in rotation',
   tags: ['Reading', 'Self-Improvement', 'Behavioural Economics', 'Biography'],
   summary:
-    'A steady diet of self-help books, with Atomic Habits as the one I keep coming back to. Currently working through the Steve Jobs biography and Predictably Irrational — the second of which is quietly unsettling about how little of my decision-making is decision-making.',
+    'A steady diet of self-help books, with Atomic Habits as the one I keep coming back to. Currently working through the Steve Jobs biography and Predictably Irrational, the second of which is quietly unsettling about how little of my decision-making is actually decision-making.',
   highlights: [
-    'Favourite: Atomic Habits — James Clear.',
-    'Currently reading: Steve Jobs — Walter Isaacson.',
-    'Currently reading: Predictably Irrational — Dan Ariely.',
+    'Favourite: Atomic Habits, by James Clear.',
+    'Currently reading: Steve Jobs, by Walter Isaacson.',
+    'Currently reading: Predictably Irrational, by Dan Ariely.',
   ],
   links: [],
 };
@@ -595,7 +595,7 @@ export const playlists: Playlist[] = [
     slug: 'projects',
     title: 'Shipped Builds',
     description:
-      'Everything that made it out of the editor — mobile, VR, machine learning and the web, in roughly the order I would replay them.',
+      'Everything that made it out of the editor. Mobile, VR, machine learning and the web, in roughly the order I would replay them.',
     kind: 'playlist',
     blurb: '6 builds · mobile, VR, ML, web',
     gradient: 'from-cyan-600 via-sky-900 to-elevated',
@@ -617,7 +617,7 @@ export const playlists: Playlist[] = [
     slug: 'mentorship',
     title: 'Paying It Forward',
     description:
-      'Leadership and mentorship — the long-running series. Eighty-plus engineering students, a charity auction, and a stint running an organization\'s public face.',
+      'Leadership and mentorship, the long-running series. Eighty-plus engineering students, a charity auction, and a stint running an organization\'s public face.',
     kind: 'podcast',
     blurb: 'Leadership · 80+ students',
     gradient: 'from-violet-600 via-purple-900 to-elevated',
@@ -650,7 +650,7 @@ export const playlists: Playlist[] = [
     slug: 'learning',
     title: 'Currently Learning',
     description:
-      'The in-progress shelf — what I am reading, building and forming opinions about right now. AI tooling, markets, the energy industry, and a stack of books.',
+      'The in-progress shelf. What I\'m reading, building and forming opinions about right now: AI tooling, markets, the energy industry, and a stack of books.',
     kind: 'playlist',
     blurb: '5 in rotation',
     gradient: 'from-fuchsia-500 via-indigo-900 to-elevated',

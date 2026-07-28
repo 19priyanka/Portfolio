@@ -58,10 +58,10 @@ export function PlaylistCard({ playlist }: { playlist: Playlist }) {
           {playlist.title}
         </Link>
       </h3>
-      <p className="line-clamp-2-safe mt-1 min-h-[2.5rem] text-sm text-white/75">
+      <p className="mt-1 line-clamp-2 min-h-[2.5rem] text-sm text-white/85">
         {playlist.description}
       </p>
-      <p className="mt-2 text-[11px] font-semibold tracking-wide text-white/60 uppercase">
+      <p className="mt-2 text-[11px] font-semibold tracking-wide text-white/65 uppercase">
         {KIND_LABEL[playlist.kind]} · {playlist.blurb}
       </p>
     </div>
