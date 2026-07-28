@@ -58,7 +58,7 @@ export function AppShell() {
       >
         Skip to content
       </a>
-      <div className="grid h-dvh grid-rows-[1fr_auto] overflow-x-clip bg-base">
+      <div className="grid h-dvh grid-rows-[1fr_auto] overflow-x-clip bg-canvas">
         {/* flex rather than grid columns: the detail panel animates its own
             width open and closed, which a fixed grid template would fight. */}
         <div className="flex min-h-0">

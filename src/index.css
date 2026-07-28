@@ -5,11 +5,15 @@
    Design tokens.
 
    The site is dark-only by intent: it is imitating a dark-mode product. There
-   is no light theme and no toggle. Contrast is checked against `--color-base`
+   is no light theme and no toggle. Contrast is checked against `--color-canvas`
    and `--color-elevated`, the only two surfaces body text ever sits on.
+
+   Do not name a color token after a font-size step (base, sm, lg, xl, ...).
+   Tailwind builds `text-<name>` for both, and the color wins, which silently
+   turns `text-base` into `color: #000`.
    --------------------------------------------------------------------------- */
 @theme {
-  --color-base: #000000;
+  --color-canvas: #000000;
   --color-elevated: #121212;
   --color-card: #181818;
   --color-hover: #1f1f1f;
@@ -17,10 +21,10 @@
   --color-line: #2e2e2e;
 
   --color-ink: #ffffff;
-  /* 6.4:1 on --color-elevated, 6.9:1 on --color-base. Passes AA. */
+  /* 6.4:1 on --color-elevated, 6.9:1 on --color-canvas. Passes AA. */
   --color-subdued: #a7a7a7;
 
-  /* 6.3:1 on --color-base. Never used as text on a light surface. */
+  /* 6.3:1 on --color-canvas. Never used as text on a light surface. */
   --color-accent: #1db954;
   --color-accent-bright: #1ed760;
   --color-cyan: #22d3ee;
@@ -45,7 +49,7 @@
 
   body {
     margin: 0;
-    background-color: var(--color-base);
+    background-color: var(--color-canvas);
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;

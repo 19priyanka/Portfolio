@@ -12,7 +12,7 @@ export function MobileTabBar() {
   return (
     <nav
       aria-label="Primary"
-      className="z-40 flex items-stretch border-t border-line bg-base pb-[env(safe-area-inset-bottom)] md:hidden"
+      className="z-40 flex items-stretch border-t border-line bg-canvas pb-[env(safe-area-inset-bottom)] md:hidden"
     >
       {TABS.map(({ to, label, icon: Icon, end }) => (
         <NavLink
